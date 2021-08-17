@@ -1,24 +1,23 @@
 import Head from "next/head";
-import Link from "next/link";
 import React from "react";
-import Image from "next/image";
+import Layout, { siteTitle } from "../components/layout";
+import utilStyles from "../styles/utils.module.css";
+
 class Home extends React.Component {
   render() {
     return (
-      <div>
-        <Image
-          src="/images/profile.jpg" // Route of the image file
-          height={144} // Desired size with correct aspect ratio
-          width={144} // Desired size with correct aspect ratio
-          alt="Your Name"
-        />
-        <h1 className="title">
-          Read{" "}
-          <Link href="/posts/first-post">
-            <a>this page!</a>
-          </Link>
-        </h1>
-      </div>
+      <Layout home>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
+        <section className={utilStyles.headingMd}>
+          <p>[Your Self Introduction]</p>
+          <p>
+            (This is a sample website - you’ll be building a site like this on{" "}
+            <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          </p>
+        </section>
+      </Layout>
     );
   }
 }
